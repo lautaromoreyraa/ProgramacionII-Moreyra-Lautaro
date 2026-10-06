@@ -1,12 +1,11 @@
 package ejercicio_2.Modelo;
 
-public class SalaDeReunion extends EspacioWorkBase {
-    private final double costoAdicionalLimpieza;
+public class SalaDeReunion extends EspacioWorkImpl {
+    private final double costoAdicionalLimpieza = 15;
     private final boolean tieneProyector;
 
-    public SalaDeReunion(String id, String tipo, int capacidadMaxima, double precioHora, boolean disponible, double costoAdicionalLimpieza, boolean tieneProyector) {
-        super(id, tipo, capacidadMaxima, precioHora, disponible);
-        this.costoAdicionalLimpieza = costoAdicionalLimpieza;
+    public SalaDeReunion(String id, String tipo, int capacidadMaxima, double precioHora, boolean disponible, boolean mobiliarioAdicional, boolean tieneProyector) {
+        super(id, tipo, capacidadMaxima, precioHora, disponible, mobiliarioAdicional);
         this.tieneProyector = tieneProyector;
     }
 

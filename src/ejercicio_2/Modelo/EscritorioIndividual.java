@@ -1,10 +1,10 @@
 package ejercicio_2.Modelo;
 
-public class EscritorioIndividual extends EspacioWorkBase {
+public class EscritorioIndividual extends EspacioWorkImpl {
     private final boolean tieneMonitorExtra;
 
-    public EscritorioIndividual(String id, String tipo, int capacidadMaxima, double precioHora, boolean disponible, boolean tieneMonitorExtra) {
-        super(id, tipo, capacidadMaxima, precioHora, disponible);
+    public EscritorioIndividual(String id, String tipo, int capacidadMaxima, double precioHora, boolean disponible, boolean mobiliarioAdicional, boolean tieneMonitorExtra) {
+        super(id, tipo, capacidadMaxima, precioHora, disponible, mobiliarioAdicional);
         this.tieneMonitorExtra = tieneMonitorExtra;
     }
 

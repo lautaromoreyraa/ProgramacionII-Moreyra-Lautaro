@@ -11,16 +11,16 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         GestorEspacioWork gestor = new GestorEspacioWork();
 
-        EspacioWorkImpl reunion1 = new SalaDeReunion("1", "Sala de Reunión", 10, 50.0, true, true,  false);
+        SalaDeReunion reunion1 = new SalaDeReunion("1", "Sala de Reunión", 10, 50.0, true, true,  false);
         gestor.agregarEspacio(reunion1);
 
-        EspacioWorkImpl reunion2 = new SalaDeReunion("2", "Sala de Reunión", 8, 40.0, true, false,  true);
+        SalaDeReunion reunion2 = new SalaDeReunion("2", "Sala de Reunión", 8, 40.0, true, false,  true);
         gestor.agregarEspacio(reunion2);
 
-        EspacioWorkImpl escritorio1 = new EscritorioIndividual("3", "Escritorio Individual", 1, 30.0, true, false, true);
+        EscritorioIndividual escritorio1 = new EscritorioIndividual("3", "Escritorio Individual", 1, 30.0, true, false, true);
         gestor.agregarEspacio(escritorio1);
 
-        EspacioWorkImpl escritorio2 = new EscritorioIndividual("4", "Escritorio Individual", 1, 25.0, true, true, false);
+        EscritorioIndividual escritorio2 = new EscritorioIndividual("4", "Escritorio Individual", 1, 25.0, false, true, false);
         gestor.agregarEspacio(escritorio2);
 
 

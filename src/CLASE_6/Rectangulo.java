@@ -24,4 +24,8 @@ public class Rectangulo extends Figura {
         return base * altura;
     }
 
+    @Override
+    public int compareTo(Figura o) {
+        return 0;
+    }
 }

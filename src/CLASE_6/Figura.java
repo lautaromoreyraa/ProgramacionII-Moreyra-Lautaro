@@ -1,13 +1,11 @@
 package CLASE_6;
 
-public abstract class Figura {
+public abstract class Figura implements Comparable<Figura> {
     private String nombre;
 
     public Figura(String nombre) {
         this.nombre = nombre;
     }
-
-    public Figura(){}
 
     public String getNombre() {
         return nombre;
@@ -17,11 +15,9 @@ public abstract class Figura {
         this.nombre = nombre;
     }
 
-    double calcularArea (){
-        return 0.0;
-    }
+    public abstract double calcularArea();
 
-    public static double calcularAreaTotal (Figura[] figuras) {
+    public static double calcularAreaDeCadaFigura(Figura[] figuras) {
         double areaTotal = 0.0;
 
         for (Figura figura : figuras) {
@@ -29,9 +25,17 @@ public abstract class Figura {
                 break;
             }
             areaTotal = figura.calcularArea();
-            System.out.println("Área del: " + figura.nombre + areaTotal);
+            System.out.println("Área del " + figura.nombre + ": " + areaTotal);
         }
         return areaTotal;
+    }
+
+    public static void imprimirColeccion(Figura[] figuras) {
+        for (Figura f : figuras) {
+            if (f != null) {
+                System.out.printf("%s -> Área: %.2f%n", f.getNombre(), f.calcularArea());
+            }
+        }
     }
 }
 

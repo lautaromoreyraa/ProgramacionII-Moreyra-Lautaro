@@ -1,6 +1,10 @@
 import CLASE_5.*;
 import CLASE_6.*;
 
+import java.util.Arrays;
+
+import static CLASE_6.Figura.imprimirColeccion;
+
 public static void main(String[] args) {
 
     //Tema 1: Clases, objetos y constructores
@@ -102,7 +106,7 @@ public static void main(String[] args) {
 
     // Ejercicio 2
 
-    Figura figuras[] = new Figura [6];
+    Figura[] figuras = new Figura[6];
 
     Figura circulo1 = new Circulo(5.0);
     Figura circulo2 = new Circulo(2.5);
@@ -120,7 +124,16 @@ public static void main(String[] args) {
     figuras[4] = triangulo1;
     figuras[5] = triangulo2;
 
-    double resultado = Figura.calcularAreaTotal(figuras);
+    Figura.calcularAreaDeCadaFigura(figuras);
 
+    System.out.println("--- COLECCIÓN ANTES DE ORDENAR ---");
+    imprimirColeccion(figuras);
+
+    // Se ordena usando el método compareTo implementado en Figura
+    Arrays.sort(figuras);
+
+
+    System.out.println("\n--- COLECCIÓN DESPUÉS DE ORDENAR (Por Área Menor a Mayor) ---");
+    imprimirColeccion(figuras);
 
 }

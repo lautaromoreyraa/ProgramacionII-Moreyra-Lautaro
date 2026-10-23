@@ -24,4 +24,9 @@ public class Triangulo extends Figura {
         double s = (lado1 + lado2 + lado3) / 2.0;
         return Math.sqrt(s * (s - lado1) * (s - lado2) * (s - lado3));
     }
+
+    @Override
+    public int compareTo(Figura o) {
+        return 0;
+    }
 }

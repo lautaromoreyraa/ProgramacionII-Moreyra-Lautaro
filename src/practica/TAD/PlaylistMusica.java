@@ -1,8 +1,8 @@
 package practica.TAD;
 
-public interface PlaylistMusica<Cancion> {
+public interface PlaylistMusica {
     Cancion getCancionById(String id);
-    void agregarCancion(String nombre);
-    void eliminarCancion (String nombre);
-    void editarCancion (String nombre);
+    void agregarCancion(Cancion cancion);
+    void eliminarCancion (String id);
+    void editarCancion (String id, String nombre, short duracion);
 }

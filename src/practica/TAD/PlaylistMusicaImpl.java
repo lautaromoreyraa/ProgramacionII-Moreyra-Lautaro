@@ -2,23 +2,27 @@ package practica.TAD;
 
 import java.util.LinkedList;
 
-public class PlaylistMusicaImpl<Cancion> implements PlaylistMusica<Cancion> {
+public class PlaylistMusicaImpl implements PlaylistMusica {
 
-    LinkedList<Cancion> canciones;
+    private LinkedList<Cancion> canciones = new LinkedList<>();
 
     @Override
     public Cancion getCancionById(String id) {
         for (Cancion cancion : canciones){
-            if (cancion.equals(id)){
+            if (cancion.getId().equals(id)){
                 return cancion;
-            } else throw new IllegalArgumentException("No existe esa cancion con ese ID");
+            }
         }
-        return null;
+        throw new IllegalArgumentException("No existe una cancion con el ID " + id);
     }
 
     @Override
-    public void agregarCancion(String id) {
-        Cancion cancion = getCancionById(id);
+    public void agregarCancion(Cancion cancion) {
+        for (Cancion c : canciones){
+            if (c.getId().equals(cancion.getId())){
+                throw new IllegalArgumentException("Ya existe una cancion con el ID " + cancion.getId());
+            }
+        }
         canciones.add(cancion);
     }
 
@@ -29,9 +33,15 @@ public class PlaylistMusicaImpl<Cancion> implements PlaylistMusica<Cancion> {
     }
 
     @Override
-    public void editarCancion(String id) {
+    public void editarCancion(String id, String nombre, short duracion) {
         Cancion cancion = getCancionById(id);
-        canciones.remove();
-        //logica para editar la cancion
+        cancion.setNombre(nombre);
+        cancion.setDuracion(duracion);
+    }
+
+    public void mostrar() {
+        for (Cancion cancion : canciones){
+            System.out.println(cancion.getId() + " - " + cancion.getNombre() + " (" + cancion.getDuracion() + " seg) - " + String.join(", ", cancion.getAutor()));
+        }
     }
 }

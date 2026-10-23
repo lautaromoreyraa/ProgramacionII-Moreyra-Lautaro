@@ -29,11 +29,3 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-
-### Notas y asistentes ###
-CLAUDE.md
-AGENTS.md
-MEMORY.md
-.claude/
-.cursorrules
-!README.md

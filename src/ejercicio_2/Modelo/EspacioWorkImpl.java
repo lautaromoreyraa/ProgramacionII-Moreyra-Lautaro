@@ -10,8 +10,6 @@ public abstract class EspacioWorkImpl implements EspacioWork {
     private boolean disponible;
     private boolean mobiliarioAdicional;
 
-    GestorEspacioWork gestorEspacioWork;
-
     public EspacioWorkImpl(String id, String tipo, int capacidadMaxima, double precioHora ,boolean disponible, boolean mobiliarioAdicional) {
         setId(id);
         this.tipo = tipo;

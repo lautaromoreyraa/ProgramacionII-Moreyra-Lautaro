@@ -17,4 +17,9 @@ public class Circulo extends Figura {
     public double calcularArea() {
         return Math.PI * radio * radio;
     }
+
+    @Override
+    public int compareTo(Figura o) {
+        return 0;
+    }
 }
